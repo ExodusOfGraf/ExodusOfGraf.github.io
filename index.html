@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часы Q&Q</title>
+    <link href="./css/style.css" type="text/css"  rel="stylesheet">
+</head>
+<body>
+	
+	<nav>
+		<div class="logo-container">
+			<img src="images/logo.png" alt="Логотип" class="logo">
+			<span class="shop-name">Часы Q&Q</span>
+		</div>
+	
+        <ul class="nav-menu">
+            <li><a href="#" onclick="openTab('home')">Главная</a></li>
+            <li><a href="#" onclick="openTab('catalog')">Каталог</a></li>
+			<li><a href="#" onclick="openCart()"><img src="images/cart-icon.png" alt="Корзина" class="cart-icon"></a></li>
+            <li><a href="#" onclick="openTab('about')">О компании</a></li>
+            <li><a href="#" onclick="openTab('contacts')">Контакты</a></li>
+        </ul>
+    </nav>
+	
+	
+     <div id="home" class="tab-content">
+        <h1>Наш магазин предоставляет качественную и оригинальную продукцию, включая гаранию.</h1>
+    </div>
+    
+    <div id="catalog" class="tab-content" style="display:none;">
+        <h1>Список моделей в наличии:</h1>
+		
+        <ul class="catalog-list">
+			<li class="catalog-item">
+				<img src="images/watch1.jpg" alt="Q&Q Quartz A190-201Y">
+				<h3><a href="#" onclick="showProductCard()">Q&Q Quartz A190-201Y</a></h3>
+				<p>Стильные мужские часы с классическим дизайном</p>
+			</li>
+			<li class="catalog-item">
+				<img src="images/watch2.jpg" alt="Q&Q Quartz A192-301X">
+				<h3>Q&Q A192-204</h3>
+				<p>Модель с современной технологией и надежностью</p>
+				<p>Временно отсутвуют</p>
+			</li>
+			<li class="catalog-item">
+				<img src="images/watch3.jpg" alt="Q&Q Solar Power">
+				<h3>Q&Q Solar</h3>
+				<p>Часы на для активного образа жизни</p>
+				<p>Временно отсутвуют</p>
+			</li>
+		</ul>
+
+    </div>
+    
+    <div id="about" class="tab-content" style="display:none;">
+        <h2>О компании</h2>
+        <p>Наша компания занимается продажей оригинальных часов уже более 5 лет. Мы предоставляем гарантию на все товары, а так же занимаемся тех. обслуживанием и ремонтом</p>
+    </div>
+    
+    <div id="contacts" class="tab-content" style="display:none;">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами по телефону: 8(800)555-3535</p>
+        <p>Или по электронной почте: info@example.com</p>
+    </div>
+
+	
+	<div id="product-card" class="tab-content" style="display:none;">
+		<div class="container">
+			<h1>Q&Q Quartz A190-201Y</h1>
+			
+			<div class="content">
+				<img src="images/watch1.jpg" alt="Q&Q Quartz" class="product-image">
+			
+				<div class="text-content">
+					<h2>Описание товара</h2>
+					<p class="short-description">
+						Q&Q A190-201Y – это мужские часы с классическим дизайном. Корпус из латуни с диаметром 38 мм украшен минеральным стеклом. Браслет из металлического сплава подчеркнет ваш стиль. На белом циферблате отображаются аналоговые индикаторы даты и дня недели. Водозащита 30 WR позволяет не беспокоиться о погодных условиях. Вы получите 12 месяцев гарантии при покупке этих часов от Q&Q.
+					</p>
+			
+					<h2>Характеристики товара</h2>
+					<ul class="stylish-list">
+						<li>Пол -- мужские</li>
+						<li>Модель -- A190-201Y</li>
+						<li>Гарантия  -- 12 мес.</li>
+						<li>Бренд -- Q&Q</li>
+						<li>Стиль -- Классика</li>
+						<li>Тип механизма -- кварцевый</li>
+						<li>Стекло -- минеральное </li>
+					</ul>
+			
+					<button class="buy-button" onclick="addToCart('Q&Q Quartz A190-201Y', 3600, 'images/watch1.jpg')">Купить</button>
+			
+					<h2>Подробное описание товара</h2>
+					<p class="detailed-description">
+						Шикарные наручные часы QQ A190-201Y - идеальный выбор для стильного и успешного мужчины. Этот классический аксессуар с аналоговым способом отображения времени подойдет как для деловой встречи, так и для повседневной носки. Цвет корпуса хромовый, а браслет из нержавеющей стали также выполнен в хромовом цвете. Часы имеют белый циферблат с отметками и календарем, отображение даты. Этот аксессуар работает от батарейки, что обеспечивает надежность и точность показаний. Минеральное стекло защищает циферблат от повреждений. Часы водонепроницаемы до 30 метров. Длина ремешка составляет 180 мм, а ширина - 20 мм. Гарантия на данный товар - 1 год. Эти стильные и функциональные часы станут отличным подарком для успешного мужчины. Бренд Q&Q гарантирует высокое качество и долговечность изделия. Сделано в Китае.
+					</p>
+				</div>
+			</div>
+			<hr>
+			<p class="footer-text">Все права защищены.</p>
+		</div>
+	</div>
+	
+	<div id="cart" class="tab-content" style="display:none;">
+    <div class="container">
+        <h1>Ваша корзина</h1>
+        
+        <ul class="cart-list">
+            <li class="cart-item">
+                <img src="images/watch1.jpg" alt="Q&Q Quartz A190-201Y" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Q&Q Quartz A190-201Y</h3>
+                    <p>Цена: 2500 руб.</p>
+                    <button class="remove-button">Удалить</button>
+                </div>
+            </li>
+            <li class="cart-item">
+                <img src="images/watch2.jpg" alt="Q&Q Quartz A192-301X" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Q&Q Quartz A192-301X</h3>
+                    <p>Цена: 3000 руб.</p>
+                    <button class="remove-button">Удалить</button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="cart-summary">
+            <h2>Итого: 5500 руб.</h2>
+            <button class="checkout-button">Оформить заказ</button>
+        </div>
+    </div>
+</div>
+
+	
+	<script>
+        // Функция для открытия вкладки
+        function openTab(tabId) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = 'none';
+            }
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        // Функция для показа карточки товара
+        function showProductCard() {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = 'none';
+            }
+            document.getElementById('product-card').style.display = 'block';
+        }
+
+        // Показать главную страницу при загрузке
+        window.onload = function() {
+            openTab('home');
+        }
+		
+		let cart = []; // Массив для хранения товаров в корзине
+
+	function addToCart(name, price, image) {
+		const item = { name, price, image };
+		cart.push(item);
+		alert(name + " добавлен в корзину!"); // Уведомление о добавлении товара
+	}
+
+	// Функция для открытия вкладки корзины
+	function openCart() {
+		openTab('cart');
+		displayCartItems(); // Отобразить товары в корзине
+	}
+
+	// Функция для отображения товаров в корзине
+	function displayCartItems() {
+		const cartList = document.querySelector('.cart-list');
+		cartList.innerHTML = ''; // Очищаем текущий список товаров
+
+		let total = 0; // Сумма для отображения
+
+		cart.forEach(item => {
+			total += item.price;
+			const listItem = document.createElement('li');
+			listItem.className = 'cart-item';
+			listItem.innerHTML = `
+				<img src="${item.image}" alt="${item.name}" class="cart-item-image">
+				<div class="cart-item-details">
+					<h3>${item.name}</h3>
+					<p>Цена: ${item.price} руб.</p>
+					<button class="remove-button" onclick="removeFromCart('${item.name}')">Удалить</button>
+				</div>
+			`;
+			cartList.appendChild(listItem);
+	});
+
+		const cartSummary = document.querySelector('.cart-summary h2');
+		cartSummary.textContent = `Итого: ${total} руб.`; // Обновляем итоговую сумму
+	}
+
+	// Функция для удаления товара из корзины
+	function removeFromCart(name) {
+		cart = cart.filter(item => item.name !== name); // Удаляем товар из массива
+		displayCartItems(); // Обновляем отображение корзины
+	}
+    </script>
+	
+	
+	
+</body>
+</html>

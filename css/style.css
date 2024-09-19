@@ -1,0 +1,338 @@
+/* Общие стили */
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+	
+    margin: 0;
+    padding: 0px;
+}
+a{
+	text-decoration: none;
+	color:#000;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+}
+
+/* Стили для навигационного меню */
+nav {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333; /* Фон меню */
+    padding: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-height: 50px; /* Задаем высоту логотипа */
+    margin-right: 10px; /* Отступ между логотипом и названием */
+	
+}
+
+.shop-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e0c83a;
+	
+}
+
+.nav-menu {
+    list-style-type: none;  /* Убираем маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex;  /* Flexbox для горизонтального расположения */
+    justify-content: center;  /* Центрирование меню */
+}
+
+.nav-menu li {
+    margin-right: 20px;  /* Отступ между вкладками */
+}
+
+.nav-menu li:last-child {
+    margin-right: 0;  /* Убираем отступ у последней вкладки */
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;  /* Цвет текста ссылок */
+    font-size: 16px;
+    padding: 10px 15px;
+    background-color: #333;  /* Фон ссылок */
+    transition: background-color 0.3s ease;
+	border-radius: 12px; /* Скругление углов */
+	
+}
+
+.nav-menu li a:hover {
+    background-color: #e0c83a;  /* Изменение фона при наведении */
+	border-radius: 12px; /* Скругление углов */
+}
+
+/* Стили для изображения и текста */
+.content {
+    display: flex; /* Flexbox для размещения изображения и текста в строку */
+    align-items: flex-start; /* Выравниваем элементы по верхней линии */
+    gap: 20px; /* Отступ между изображением и текстом */
+}
+
+.product-image {
+    width: 300px; /* Фиксированная ширина для изображения */
+    height: auto; /* Автоматическая подгонка высоты */
+}
+
+.text-content {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+h2 {
+    background-color: #eaeaea;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+	border-radius: 12px; /* Скругление углов */
+}
+
+/* Стили для краткого описания */
+.short-description {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+/* Стили для списка характеристик */
+.product-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.product-specs li {
+    background-image: url('images/marker.png'); /* Путь к изображению маркера */
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    background-position: 0 50%;
+}
+
+/* Стили для подробного описания */
+.detailed-description {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin: 30px 0;
+}
+
+.footer-text {
+    text-align: center;
+    color: #999999;
+    font-size: 14px;
+}
+
+/* Стили для секций */
+.tab-content {
+    padding: 50px;
+    margin: 20px 0;
+}
+
+/* Общие стили для списков */
+ul.stylish-list {
+    list-style-type: none; /* Убираем стандартные маркеры */
+    padding: 0;
+    margin: 0;
+}
+
+ul.stylish-list li {
+    background-color: #f8f9fa; /* Фон для каждого элемента */
+    margin-bottom: 10px; /* Расстояние между элементами */
+    padding: 15px 20px; /* Внутренние отступы */
+    border-radius: 8px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для объема */
+    display: flex; /* Используем flex для выравнивания */
+    align-items: center;
+	position: relative;
+}
+
+ul.stylish-list li:before { /* Не пработает маркер */
+    content: ''; /* Убираем символ */
+    background-image: url('./images/marker.png'); /* Путь к изображению маркера */
+    background-repeat: no-repeat; /* Не повторять изображение */
+    background-size: 16px 16px; /* Размер изображения маркера */
+    width: 16px; /* Ширина маркера */
+    height: 16px; /* Высота маркера */
+    position: absolute; /* Позиционирование */
+    left: 10px; /* Расстояние от левого края */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Коррекция по вертикали */
+}
+
+ul.stylish-list li:hover {
+    background-color: #e2e6ea; /* Изменение фона при наведении */
+    transition: background-color 0.3s ease; /* Плавное изменение фона */
+}
+
+/* Стили для текста в списке */
+ul.stylish-list li span {
+    font-size: 16px;
+    color: #333; /* Основной цвет текста */
+    font-weight: bold;
+	margin-left: 30px;
+}
+
+
+/* Общие стили для списка моделей */
+.catalog-list {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку */
+    gap: 20px; /* Расстояние между карточками */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.catalog-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 20px); /* Размер карточки (3 на строку) */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px); /* Анимация при наведении */
+}
+
+.catalog-item img {
+    max-width: 27%;
+    height: auto;
+}
+
+.catalog-item h3 {
+    font-size: 18px;
+    color: #333;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+.catalog-item p {
+    font-size: 14px;
+    color: #707070;
+    padding: 0 15px 15px;
+    margin: 0;
+}
+
+
+/* Стили для кнопки */
+.buy-button {
+    background-color: #007bff; /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границы */
+    border-radius: 8px; /* Скругление углов */
+    padding: 10px 60px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Указатель для курсора */
+    transition: background-color 0.3s ease; /* Плавный переход фона */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Эффект при наведении */
+.buy-button:hover {
+    background-color: #28a745; /* Цвет при наведении (зеленый) */
+}
+
+
+.cart-icon {
+    width: 24px; /* Установите ширину иконки */
+    height: auto; /* Автоматическая высота */
+    vertical-align: middle; /* Центрирование иконки по вертикали */
+}
+
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+    width: 100px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    margin-right: 15px; /* Отступ справа */
+}
+
+.cart-item-details {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+.remove-button {
+    background-color: #dc3545; /* Красный цвет для удаления */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #c82333; /* Темнее при наведении */
+}
+
+.cart-summary {
+    margin-top: 20px;
+    text-align: right; /* Выравнивание по правому краю */
+}
+
+.checkout-button {
+    background-color: #28a745; /* Зеленый цвет для оформления заказа */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #218838; /* Темнее при наведении */
+}
