@@ -19,11 +19,10 @@
 		</div>
 	
         <ul class="nav-menu">
-            <li><a href="#" onclick="openTab('home')">Главная</a></li>
-            <li><a href="#" onclick="openTab('catalog')">Каталог</a></li>
+            <li><a href="#" onclick="openTab('home')"><img src="images/home.png" alt="Главная" class="home-icon"></a></li>
+			<li><a href="#" onclick="openTab('catalog')"><img src="images/katalog.png" alt="Каталог" class="katalog-icon"></a></li>
 			<li><a href="#" onclick="openCart()"><img src="images/cart-icon.png" alt="Корзина" class="cart-icon"></a></li>
-            <li><a href="#" onclick="openTab('about')">О компании</a></li>
-            <li><a href="#" onclick="openTab('contacts')">Контакты</a></li>
+			<li><a href="#" onclick="openTab('about')"><img src="images/about.png" alt="О компании" class="about-icon"></a></li>
         </ul>
     </nav>
 	
@@ -33,21 +32,23 @@
     </div>
     
     <div id="catalog" class="tab-content" style="display:none;">
-        <h1>Список моделей в наличии:</h1>
+        <h1>Список моделей </h1>
 		
         <ul class="catalog-list">
 			<li class="catalog-item">
-				<img src="images/watch1.jpg" alt="Q&Q Quartz A190-201Y">
-				<h3><a href="#" onclick="showProductCard()">Q&Q Quartz A190-201Y</a></h3>
+				<a href="javascript:void(0);" onclick="showProductCard('Q&Q Quartz A190-201Y')">
+                <img src="images/watch1.jpg" alt="Q&Q Quartz A190-201Y">
+				</a>
+				<h3><a href="javascript:void(0);" onclick="showProductCard('Q&Q Quartz A190-201Y')">Q&Q Quartz A190-201Y</a></h3>
 				<p>Стильные мужские часы с классическим дизайном</p>
 			</li>
-			<li class="catalog-item">
+			<li class="catalog-item out-of-stock">
 				<img src="images/watch2.jpg" alt="Q&Q Quartz A192-301X">
 				<h3>Q&Q A192-204</h3>
 				<p>Модель с современной технологией и надежностью</p>
 				<p>Временно отсутвуют</p>
 			</li>
-			<li class="catalog-item">
+			<li class="catalog-item out-of-stock">
 				<img src="images/watch3.jpg" alt="Q&Q Solar Power">
 				<h3>Q&Q Solar</h3>
 				<p>Часы на для активного образа жизни</p>
@@ -60,28 +61,42 @@
     <div id="about" class="tab-content" style="display:none;">
         <h2>О компании</h2>
         <p>Наша компания занимается продажей оригинальных часов уже более 5 лет. Мы предоставляем гарантию на все товары, а так же занимаемся тех. обслуживанием и ремонтом</p>
-    </div>
-    
-    <div id="contacts" class="tab-content" style="display:none;">
-        <h2>Контакты</h2>
+		<h2>Контакты</h2>
         <p>Свяжитесь с нами по телефону: 8(800)555-3535</p>
         <p>Или по электронной почте: info@example.com</p>
-    </div>
+	</div>
 
 	
 	<div id="product-card" class="tab-content" style="display:none;">
 		<div class="container">
 			<h1>Q&Q Quartz A190-201Y</h1>
-			
 			<div class="content">
-				<img src="images/watch1.jpg" alt="Q&Q Quartz" class="product-image">
+				<div class="carousel">
+					<div class="carousel-images">
+						<div class="carousel-item active">
+							<img src="images/watch1.jpg" alt="Q&Q Quartz A190-201Y" class="product-image">
+						</div>
+						<div class="carousel-item">
+							<video class="product-video" controls>
+								<source src="video\A190-201Y.mp4" type="video/mp4"> 
+							</video>
+						</div>
+						<div class="carousel-item">
+							<iframe class="product-video" width="406" height="720" src="https://www.youtube.com/embed/sMZ4CsQyh9I" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+					<button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+					<button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+				</div>
 			
 				<div class="text-content">
 					<h2>Описание товара</h2>
 					<p class="short-description">
 						Q&Q A190-201Y – это мужские часы с классическим дизайном. Корпус из латуни с диаметром 38 мм украшен минеральным стеклом. Браслет из металлического сплава подчеркнет ваш стиль. На белом циферблате отображаются аналоговые индикаторы даты и дня недели. Водозащита 30 WR позволяет не беспокоиться о погодных условиях. Вы получите 12 месяцев гарантии при покупке этих часов от Q&Q.
 					</p>
-			
+					
+					<button class="buy-button" onclick="addToCart('Q&Q Quartz A190-201Y', 3600, 'images/watch1.jpg')">Купить</button>
+					
 					<h2>Характеристики товара</h2>
 					<ul class="stylish-list">
 						<li>Пол -- мужские</li>
@@ -93,20 +108,19 @@
 						<li>Стекло -- минеральное </li>
 					</ul>
 			
-					<button class="buy-button" onclick="addToCart('Q&Q Quartz A190-201Y', 3600, 'images/watch1.jpg')">Купить</button>
-			
 					<h2>Подробное описание товара</h2>
 					<p class="detailed-description">
 						Шикарные наручные часы QQ A190-201Y - идеальный выбор для стильного и успешного мужчины. Этот классический аксессуар с аналоговым способом отображения времени подойдет как для деловой встречи, так и для повседневной носки. Цвет корпуса хромовый, а браслет из нержавеющей стали также выполнен в хромовом цвете. Часы имеют белый циферблат с отметками и календарем, отображение даты. Этот аксессуар работает от батарейки, что обеспечивает надежность и точность показаний. Минеральное стекло защищает циферблат от повреждений. Часы водонепроницаемы до 30 метров. Длина ремешка составляет 180 мм, а ширина - 20 мм. Гарантия на данный товар - 1 год. Эти стильные и функциональные часы станут отличным подарком для успешного мужчины. Бренд Q&Q гарантирует высокое качество и долговечность изделия. Сделано в Китае.
 					</p>
 				</div>
 			</div>
+			
 			<hr>
 			<p class="footer-text">Все права защищены.</p>
 		</div>
 	</div>
 	
-	<div id="cart" class="tab-content" style="display:none;">
+<div id="cart" class="tab-content" style="display:none;">
     <div class="container">
         <h1>Ваша корзина</h1>
         
@@ -206,9 +220,35 @@
 		cart = cart.filter(item => item.name !== name); // Удаляем товар из массива
 		displayCartItems(); // Обновляем отображение корзины
 	}
+	
+	let currentIndex = 0; // Индекс текущего слайда
+	const slides = document.querySelectorAll('.carousel-item'); // Все слайды
+
+	function showSlide(index) {
+		const totalSlides = slides.length;
+		if (index < 0) {
+			currentIndex = totalSlides - 1; // Переключение на последний слайд
+		} else if (index >= totalSlides) {
+			currentIndex = 0; // Переключение на первый слайд
+		} else {
+			currentIndex = index; // Обновляем индекс текущего слайда
+		}
+
+		const offset = -currentIndex * 100; // Сдвиг на основе индекса
+		document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`; // Сдвигаем карусель
+	}
+
+	function prevSlide() {
+		showSlide(currentIndex - 1); // Показать предыдущий слайд
+	}
+
+	function nextSlide() {
+		showSlide(currentIndex + 1); // Показать следующий слайд
+	}
+
+	// Инициализация показа первого слайда
+	showSlide(currentIndex);
     </script>
-	
-	
 	
 </body>
 </html>

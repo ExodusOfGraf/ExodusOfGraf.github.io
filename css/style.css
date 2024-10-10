@@ -180,13 +180,13 @@ ul.stylish-list li {
 	position: relative;
 }
 
-ul.stylish-list li:before { /* Не пработает маркер */
+ul.stylish-list li:before { /* Не пработает */
     content: ''; /* Убираем символ */
-    background-image: url('./images/marker.png'); /* Путь к изображению маркера */
+    background-image: url('./images/marker.png'); 
     background-repeat: no-repeat; /* Не повторять изображение */
-    background-size: 16px 16px; /* Размер изображения маркера */
-    width: 16px; /* Ширина маркера */
-    height: 16px; /* Высота маркера */
+    background-size: 16px 16px; /* Размер изображения */
+    width: 16px; /* Ширина  */
+    height: 16px; /* Высота  */
     position: absolute; /* Позиционирование */
     left: 10px; /* Расстояние от левого края */
     top: 50%; /* Центрирование по вертикали */
@@ -218,6 +218,8 @@ ul.stylish-list li span {
 }
 
 .catalog-item {
+	position: relative; /* Для позиционирования псевдоэлемента */
+	border: 1px solid #ccc; /* Граница по умолчанию */
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -251,6 +253,24 @@ ul.stylish-list li span {
     margin: 0;
 }
 
+.out-of-stock {
+    background-color: #f0f0f0; /* Серый фон для отсутствующего товара */
+    border-color: #999; /* Темная граница для серой карточки */
+    opacity: 0.7; /* Уменьшенная непрозрачность для визуального обозначения */
+}
+
+.out-of-stock::after {
+    content: "Нет в наличии"; /* Текст о недоступности */
+    position: absolute; /* Позиционирование */
+    top: 50%; /* Центрирование по вертикали */
+    left: 50%; /* Центрирование по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем текст */
+    padding: 5px 10px; /* Отступы текста */
+    border-radius: 5px; /* Округление углов */
+    font-weight: bold; /* Жирный текст */
+    color: red; /* Цвет текста */
+    z-index: 10; /* Повышаем z-index для текста */
+}
 
 /* Стили для кнопки */
 .buy-button {
@@ -271,12 +291,15 @@ ul.stylish-list li span {
 }
 
 
+/* Стили для иконок */
+.home-icon,
+.katalog-icon,
+.about-icon,
 .cart-icon {
     width: 24px; /* Установите ширину иконки */
     height: auto; /* Автоматическая высота */
     vertical-align: middle; /* Центрирование иконки по вертикали */
 }
-
 
 .cart-list {
     list-style: none;
@@ -335,4 +358,220 @@ ul.stylish-list li span {
 
 .checkout-button:hover {
     background-color: #218838; /* Темнее при наведении */
+}
+
+
+/* 
+	КАРУСЕЛЬ
+*/
+
+.content {
+    display: flex; /* Используем flexbox для размещения карусели и текста в строку */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+}
+
+.carousel {
+    display: flex; /* Flexbox для размещения изображений и видео в строку */
+    align-items: center; /* Центрируем элементы по вертикали */
+    position: relative;
+    overflow: hidden; /* Скрываем переполнение */
+    max-width: 100%; /* Устанавливаем максимальную ширину карусели на 100% */
+    margin: 0 auto 20px; /* Центрируем карусель и добавляем отступ снизу */
+}
+
+.carousel-images {
+    display: flex; /* Flexbox для размещения изображений и видео */
+    transition: transform 0.5s ease; /* Плавный переход при смене слайда */
+    width: 406px; /* Устанавливаем ширину на 100% */
+	height: auto;
+}
+
+.carousel-item {
+    min-width: 100%; /* Каждому элементу карусели задаём ширину 100% */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширину */
+}
+
+.product-image {
+    width: 100%; /* Устанавливаем ширину на 100% */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 5px; /* Округляем углы */
+}
+
+/* Дополнительные стили для видео */
+.product-video {
+    width: 100%; /* Установите ширину видео на 100% */
+    height: 100%; /* Сохраняйте пропорции видео */
+    max-height: 100%; /* Установите максимальную высоту видео на мобильных устройствах */
+    border-radius: 5px; /* Округление углов видео */
+    object-fit: cover; /* Заполнение области видео */
+    display: block; /* Обеспечьте блочное отображение */
+}
+
+
+.carousel-control {
+    position: absolute; /* Позиционируем кнопки относительно карусели */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.carousel-control.prev {
+    left: 10px; /* Положение левой кнопки */
+}
+
+.carousel-control.next {
+    right: 10px; /* Положение правой кнопки */
+}
+
+
+
+
+/*  АДАПТИВНЫЙ ДИЗАЙН */
+
+/* Адаптивный дизайн до 768px  */
+@media (max-width: 768px) {
+	.shop-name {
+        display: none; /* Скрываем название магазина */
+    }
+
+    .logo {
+        max-height: 35px; /* Уменьшаем высоту логотипа */
+    }
+    .container {
+        padding: 10px; /* Уменьшаем отступы для меньших экранов */
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between; /* Размещаем логотип и меню по краям */
+        align-items: center; /* Центрируем элементы по вертикали */
+        padding: 10px; /* Добавляем отступы вокруг навигационного меню */
+    }
+
+    .logo-container {
+        flex: 0 1 auto; /* Не растягивать логотип */
+    }
+
+    .nav-menu {
+        display: flex; /* Используем flexbox для меню */
+        justify-content: flex-end; /* Выравниваем кнопки по правому краю */
+        padding: 0; /* Убираем отступы */
+        list-style: none; /* Убираем маркеры списка */
+        margin: 0; /* Убираем внешние отступы */
+    }
+
+    .nav-menu li {
+        margin-left: 15px; /* Добавляем отступы между кнопками */
+    }
+
+    .nav-menu li a {
+        padding: 10px; /* Добавляем внутренние отступы к кнопкам */
+    }
+
+    .content {
+        flex-direction: column; /* Изображение и текст столбцом */
+    }
+
+    .carousel {
+        max-width: 100%; /* Установите максимальную ширину карусели на 100% */
+        margin: 0 auto 20px; /* Центрируем карусель и добавляем отступ снизу */
+        order: 1; /* Устанавливаем порядок отображения */
+    }
+
+    .carousel-images {
+        display: flex; /* Flexbox для размещения изображений и видео */
+        position: relative; /* Позиционирование для кнопок управления */
+        width: 100%; /* Устанавливаем ширину карусели на 100% */
+    }
+	
+	.product-video {
+        max-height: 100%; /* Устанавливаем максимальную высоту для мобильных устройств */
+        border-radius: 5px; /* Округляем углы видео */
+        object-fit: cover; /* Заполняем область кадра */
+        display: block; /* Обеспечиваем блочное отображение */
+    }
+
+    .product-image {
+        width: 100%; /* Устанавливаем ширину изображения и видео на 100% */
+        height: auto; /* Сохраняем пропорции */
+        border-radius: 5px; /* Округляем углы */
+    }
+
+    .carousel-control {
+        position: absolute; /* Позиционируем кнопки относительно карусели */
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон */
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1; /* Повышаем z-index для кнопок */
+    }
+
+    .carousel-control.prev {
+        left: 10px; /* Положение левой кнопки */
+    }
+
+    .carousel-control.next {
+        right: 10px; /* Положение правой кнопки */
+    }
+
+    .text-content {
+        order: 2; /* Устанавливаем порядок отображения текста */
+        width: 100%; /* Ширина текста на 100% */
+    }
+
+    .buy-button, .remove-button, .checkout-button {
+        width: 100%; /* Устанавливаем ширину кнопок на 100% для заполнения доступного пространства */
+        padding: 10px; /* Увеличьте отступы для более крупной кнопки */
+        font-size: 16px; /* Увеличьте размер шрифта для лучшей читаемости */
+    }
+
+    .catalog-item {
+        width: calc(100% - 20px); /* Карточка на всю ширину */
+        margin-bottom: 15px;   /* Добавляем отступ между элементами */
+        text-align: center;     /* Центрируем текст в карточке */
+    }
+    
+    .catalog-list {
+        display: flex;
+        flex-direction: column; /* Размещаем элементы в столбик */
+        align-items: center;    /* Центрируем элементы по горизонтали */
+        padding: 0;            /* Убираем отступы */
+    }
+    
+    .tab-content {
+        padding: 5px;
+        margin: 20px 0;
+    }
+	
+	.remove-button {
+        padding: 4px 10px; /* Увеличьте отступы для более крупной кнопки */
+        font-size: 16px; /* Увеличьте размер шрифта для лучшей читаемости */
+        width: 45%; /* Установите ширину кнопки на 100% для заполнения доступного пространства */
+    }
+	
+	.checkout-button {
+        padding: 14px 25px; /* Увеличьте отступы для более крупной кнопки */
+        font-size: 16px; /* Увеличьте размер шрифта для лучшей читаемости */
+        width: 100%; /* Установите ширину кнопки на 100% для заполнения доступного пространства */
+    }
+	
+	.buy-button {
+		background-color: #28a745;
+	}
+}
+
+/* Адаптивный дизайн для экранов до 480px (очень маленькие устройства) */
+@media (max-width: 480px) {
+    .shop-name {
+        font-size: 18px; /* Уменьшаем размер текста */
+    }
+
+    .buy-button {
+        width: 100%; /* Кнопка на всю ширину */
+    }
 }
